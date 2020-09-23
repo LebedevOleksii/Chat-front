@@ -1,0 +1,139 @@
+@import '../../styles/variebles';
+
+.chat-bubble{
+  height: 72px;
+  width: 46px;
+  background: $message-typing-blue;
+  position: relative;
+  margin: 0 auto;
+  &:before{
+    content: '';
+    height: 72px;
+    width: 72px;
+    left: -36px;
+    position: absolute;
+    display: block;
+    background: $message-typing-blue;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  &:after{
+    content: '';
+    height: 72px;
+    width: 72px;
+    right: -36px;
+    position: absolute;
+    display: block;
+    background: $message-typing-blue;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .tail{
+    height: 25px;
+    width: 25px;
+    background: $message-typing-blue;
+    position: absolute;
+    left: -40px;
+    bottom: 46px;
+    border-radius: 50%;
+    &:before{
+      height: 12px;
+      width: 12px;
+      background: $message-typing-blue;
+      content: '';
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      left: -10px;
+      bottom: 20px;
+    }
+  }
+  .loading{
+    position: absolute;
+    z-index: 10;
+    width: 67px;
+    left:-11px;
+    top: 27px;
+    .dot{
+      height: 17px;
+      width: 17px;
+      border-radius: 50%;
+      background: #c1c1c1;
+      display: block;
+      float: left;
+      margin: 0 0 0 8px;
+      &:first-child{
+        margin: 0;
+      }
+      &.one{
+        animation: cycleOne 1s ease-in-out infinite;
+        animation-direction: normal;
+      }
+      &.two{
+        animation: cycleTwo 1s ease-in-out infinite;
+        animation-direction: normal;
+      }
+      &.three{
+        animation: cycleThree 1s ease-in-out infinite;
+        animation-direction: normal;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes cycleOne{
+  0%{
+    background: $message-typing-circle;
+    opacity: .4;
+  }
+  33.333%{
+    background: $message-typing-circle;
+    opacity: 1;
+  }
+  66.6667%{
+    background: $message-typing-circle;
+    opacity: .4;
+  }
+  100%{
+    background: $message-typing-circle;
+    opacity: .4;
+  }
+}
+
+@-webkit-keyframes cycleTwo{
+  0%{
+    background: $message-typing-circle;
+    opacity: .4;
+  }
+  33.333%{
+    background: $message-typing-circle;
+    opacity: .4;
+  }
+  66.6667%{
+    background: $message-typing-circle;
+    opacity: 1;
+  }
+  100%{
+    background: $message-typing-circle;
+    opacity: .4;;
+  }
+}
+
+@-webkit-keyframes cycleThree{
+  0%{
+    background: $message-typing-circle;
+    opacity: .4;;
+  }
+  33.333%{
+    background: $message-typing-circle;
+    opacity: .4;;
+  }
+  66.6667%{
+    background: $message-typing-circle;
+    opacity: .4;;
+  }
+  100%{
+    background: $message-typing-circle;
+    opacity: 1;
+  }
+}

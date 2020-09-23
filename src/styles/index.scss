@@ -1,0 +1,33 @@
+@import "~antd/dist/antd.css";
+
+* {
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+body, html, #root, .chat-wrapper {
+  height: 100%;
+  color: #202020;
+}
+
+body {
+  background-color: #edefff;
+}
+
+.icon-button {
+  opacity: .5;
+  font-size: 20px;
+  cursor: pointer;
+  transition: opacity .5s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.center-element-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

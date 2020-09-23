@@ -1,0 +1,151 @@
+@import '../../styles/variebles';
+
+.sidebar-search {
+  padding: 20px 20px 20px 20px;
+
+  input {
+    background-color: #f7f8f9;
+    border: 0;
+    height: 38px;
+    padding: 4px 11px 6px;
+  }
+}
+
+.dialogs__list {
+  height: calc(100vh - 130px);
+  overflow-y: auto;
+
+  .dialogs {
+    &__item {
+      padding: 15px 20px;
+      margin-bottom: 0;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background-color: #f3f7ff;
+        color: #202020;
+      }
+    }
+  }
+
+  .dialogs {
+    width: 100%;
+
+    &-search {
+      padding: 20px 20px 20px 20px;
+
+      input {
+        background-color: #f7f8f9;
+        border: 0;
+        height: 38px;
+        padding: 4px 11px 6px;
+      }
+    }
+
+    &__item {
+      display: flex;
+      $item: &;
+
+      &-avatar {
+        position: relative;
+        flex: 0 0 48px;
+        margin-right: 10px;
+      }
+
+      &--online {
+        #{$item}-avatar {
+          &::before {
+            display: block;
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            content: "";
+            background-color: #00c980;
+            border-radius: 30px;
+            width: 14px;
+            height: 14px;
+            border: 3px solid #fff;
+          }
+        }
+      }
+      &--isOpen {
+        background-color: #417fff;
+        color: white;
+        &:hover {
+          background-color: #417fff;
+          color: white;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+
+        &-top {
+          display: flex;
+
+          b {
+            font-weight: 500;
+            font-size: 14px;
+            flex: 1;
+            margin-bottom: 6px;
+          }
+
+          span {
+            opacity: .7;
+          }
+        }
+
+        &-bottom {
+          position: relative;
+          font-size: 14px;
+
+          p {
+            opacity: .7;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 190px;
+            white-space: nowrap;
+            margin: 0;
+          }
+        }
+
+        &-count {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          right: 10px;
+          bottom: 3px;
+          background-color: red;
+          color: white;
+          width: 100%;
+          min-width: 18px;
+          max-width: 22px;
+          height: 18px;
+          border-radius: 50%;
+          padding: 0;
+          margin: 0;
+          line-height: 0;
+          font-weight: 600;
+        }
+
+        &-readStatus {
+          position: absolute;
+          right: 10px;
+          bottom: 3px;
+        }
+      }
+    }
+  }
+}
